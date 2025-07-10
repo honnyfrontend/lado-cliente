@@ -323,13 +323,26 @@
         grid-template-columns: 1fr;
       }
 
+      /* ===== CORREÇÃO PARA AS FOTOS E TEXTO ===== */
       .post-images {
-        flex-direction: column;
-        overflow-x: unset;
+        flex-direction: row;
+        /* Mantém o scroll horizontal */
+        overflow-x: auto;
+        max-height: 180px;
+        padding: 10px;
       }
 
       .post-image {
-        min-width: 100%;
+        min-width: 80%;
+        height: 160px;
+      }
+
+      .post-content {
+        padding: 15px;
+      }
+
+      .post-description {
+        margin-top: 10px;
       }
     }
   </style>
