@@ -199,10 +199,13 @@
       border-bottom: 2px solid var(--accent-color);
     }
 
+    /* ===== CARDS AJUSTÁVEIS ===== */
     .posts-list {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
+      align-items: start;
+      /* Alinha os cards pelo topo */
     }
 
     .post-card {
@@ -211,11 +214,10 @@
       overflow: hidden;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
-      height: 700px;
-    }
-
-    .post-card:hover {
-      transform: translateY(-5px);
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      /* Ajusta automaticamente */
     }
 
     .post-images {
@@ -224,6 +226,8 @@
       gap: 5px;
       padding: 5px;
       background: #f5f5f5;
+      max-height: 200px;
+      /* Altura máxima das fotos */
     }
 
     .post-image {
@@ -235,22 +239,25 @@
 
     .post-content {
       padding: 20px;
+      flex: 1;
+      /* Ocupa o espaço restante */
     }
 
     .post-description {
-      font-size: 14px;
-      line-height: 1.5;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       color: #555;
-      max-height: 150px;
-      /* ou o valor que preferir */
-      overflow-y: auto;
+      word-break: break-word;
+      /* Evita quebra de layout */
     }
 
     .post-date {
       font-size: 12px;
       color: #888;
+      margin-top: auto;
+      /* Fixa a data no rodapé */
     }
+
+    /* ===== FIM DOS CARDS ===== */
 
     .alert {
       padding: 15px;
