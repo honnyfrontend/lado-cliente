@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,13 +15,13 @@
       --success-color: #4cc9f0;
       --error-color: #f72585;
     }
-    
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
@@ -28,44 +29,44 @@
       color: var(--dark-color);
       padding: 20px;
     }
-    
+
     .container {
       max-width: 1000px;
       margin: 0 auto;
       background: white;
       border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       overflow: hidden;
     }
-    
+
     header {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: white;
       padding: 20px;
       text-align: center;
     }
-    
+
     header h1 {
       font-size: 2.2rem;
       margin-bottom: 10px;
     }
-    
+
     .form-section {
       padding: 30px;
       border-bottom: 1px solid #eee;
     }
-    
+
     .form-group {
       margin-bottom: 25px;
     }
-    
+
     .form-group label {
       display: block;
       margin-bottom: 8px;
       font-weight: 600;
       color: var(--dark-color);
     }
-    
+
     .form-control {
       width: 100%;
       padding: 12px;
@@ -74,17 +75,17 @@
       font-size: 16px;
       transition: border 0.3s;
     }
-    
+
     .form-control:focus {
       border-color: var(--accent-color);
       outline: none;
     }
-    
+
     textarea.form-control {
       min-height: 120px;
       resize: vertical;
     }
-    
+
     .upload-area {
       border: 2px dashed #bdc3c7;
       border-radius: 6px;
@@ -95,24 +96,24 @@
       position: relative;
       margin-bottom: 15px;
     }
-    
+
     .upload-area:hover {
       border-color: var(--accent-color);
       background-color: rgba(72, 149, 239, 0.05);
     }
-    
+
     .upload-area i {
       font-size: 48px;
       color: var(--accent-color);
       margin-bottom: 15px;
       display: block;
     }
-    
+
     .upload-area p {
       margin: 0;
       color: #7f8c8d;
     }
-    
+
     #fileInput {
       position: absolute;
       width: 100%;
@@ -122,29 +123,29 @@
       opacity: 0;
       cursor: pointer;
     }
-    
+
     .preview-container {
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
       margin-top: 20px;
     }
-    
+
     .image-preview {
       position: relative;
       width: 120px;
       height: 120px;
       border-radius: 6px;
       overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-    
+
     .preview-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    
+
     .remove-btn {
       position: absolute;
       top: 5px;
@@ -161,14 +162,14 @@
       align-items: center;
       justify-content: center;
     }
-    
+
     .file-info {
       font-size: 12px;
-      color: red;
+      color: #666;
       margin-top: 5px;
       text-align: center;
     }
-    
+
     .btn {
       display: inline-block;
       background-color: var(--primary-color);
@@ -182,40 +183,41 @@
       transition: background-color 0.3s;
       width: 100%;
     }
-    
+
     .btn:hover {
       background-color: var(--secondary-color);
     }
-    
+
     .posts-section {
       padding: 30px;
     }
-    
+
     .posts-section h2 {
       margin-bottom: 20px;
       color: var(--dark-color);
       padding-bottom: 10px;
       border-bottom: 2px solid var(--accent-color);
     }
-    
+
     .posts-list {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
     }
-    
+
     .post-card {
       background: white;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
+      height: 350px;
     }
-    
+
     .post-card:hover {
       transform: translateY(-5px);
     }
-    
+
     .post-images {
       display: flex;
       overflow-x: auto;
@@ -223,28 +225,33 @@
       padding: 5px;
       background: #f5f5f5;
     }
-    
+
     .post-image {
       height: 150px;
       min-width: 200px;
       object-fit: cover;
       border-radius: 4px;
     }
-    
+
     .post-content {
       padding: 20px;
     }
-    
+
     .post-description {
-      margin-bottom: 15px;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 10px;
       color: #555;
+      max-height: 150px;
+      /* ou o valor que preferir */
+      overflow-y: auto;
     }
-    
+
     .post-date {
       font-size: 12px;
       color: #888;
     }
-    
+
     .alert {
       padding: 15px;
       border-radius: 6px;
@@ -252,25 +259,25 @@
       text-align: center;
       display: none;
     }
-    
+
     .alert-success {
       background-color: rgba(76, 201, 240, 0.2);
       border: 1px solid var(--success-color);
       color: var(--success-color);
     }
-    
+
     .alert-error {
       background-color: rgba(247, 37, 133, 0.2);
       border: 1px solid var(--error-color);
       color: var(--error-color);
     }
-    
+
     .loading {
       display: none;
       text-align: center;
       margin: 20px 0;
     }
-    
+
     .spinner {
       border: 4px solid rgba(0, 0, 0, 0.1);
       border-radius: 50%;
@@ -280,59 +287,62 @@
       animation: spin 1s linear infinite;
       margin: 0 auto 15px;
     }
-    
+
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
-    
+
     @media (max-width: 768px) {
       .container {
         border-radius: 0;
       }
-      
+
       header h1 {
         font-size: 1.8rem;
       }
-      
-      .form-section, .posts-section {
+
+      .form-section,
+      .posts-section {
         padding: 20px;
       }
-      
+
       .posts-list {
         grid-template-columns: 1fr;
       }
-      
+
       .post-images {
         flex-direction: column;
         overflow-x: unset;
       }
-      
+
       .post-image {
         min-width: 100%;
       }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <header>
       <h1>Sistema de Solicitações</h1>
       <p>Envie seus pedidos com múltiplas fotos</p>
     </header>
-    
+
     <section class="form-section">
       <form id="serviceForm">
         <div class="form-group">
           <label for="description">Descrição do Serviço</label>
-          <textarea 
-            id="description" 
-            class="form-control" 
-            placeholder="Descreva detalhadamente o trabalho que precisa ser realizado..." 
-            required
-          ></textarea>
+          <textarea id="description" class="form-control"
+            placeholder="Descreva detalhadamente o trabalho que precisa ser realizado..." required></textarea>
         </div>
-        
+
         <div class="form-group">
           <label>Fotos do Local/Problema (Múltiplas)</label>
           <div class="upload-area" id="uploadArea">
@@ -342,19 +352,19 @@
           </div>
           <div class="preview-container" id="previewContainer"></div>
         </div>
-        
+
         <div class="alert alert-success" id="successMessage"></div>
         <div class="alert alert-error" id="errorMessage"></div>
-        
+
         <div class="loading" id="loadingIndicator">
           <div class="spinner"></div>
           <p>Enviando sua solicitação...</p>
         </div>
-        
+
         <button type="submit" class="btn">Enviar Solicitação</button>
       </form>
     </section>
-    
+
     <section class="posts-section">
       <h2>Solicitações Recentes</h2>
       <div class="posts-list" id="postsList">
@@ -366,7 +376,7 @@
   <script>
     // Configurações
     const API_URL = 'https://lado-cliente.onrender.com/posts';
-    
+
     // Elementos DOM
     const form = document.getElementById('serviceForm');
     const fileInput = document.getElementById('fileInput');
@@ -376,7 +386,7 @@
     const successMessage = document.getElementById('successMessage');
     const errorMessage = document.getElementById('errorMessage');
     const loadingIndicator = document.getElementById('loadingIndicator');
-    
+
     // Estados
     let selectedFiles = [];
 
@@ -385,7 +395,7 @@
       fetchPosts();
       setupEventListeners();
     });
-    
+
     // Configura eventos
     function setupEventListeners() {
       // Upload de imagem
@@ -400,61 +410,61 @@
           addFilesToSelection(e.target.files);
         }
       });
-      
+
       // Drag and drop
       uploadArea.addEventListener('dragover', (e) => {
         e.preventDefault();
         uploadArea.style.borderColor = 'var(--accent-color)';
         uploadArea.style.backgroundColor = 'rgba(72, 149, 239, 0.1)';
       });
-      
+
       uploadArea.addEventListener('dragleave', () => {
         uploadArea.style.borderColor = '#bdc3c7';
         uploadArea.style.backgroundColor = '';
       });
-      
+
       uploadArea.addEventListener('drop', (e) => {
         e.preventDefault();
         uploadArea.style.borderColor = '#bdc3c7';
         uploadArea.style.backgroundColor = '';
-        
+
         if (e.dataTransfer.files.length > 0) {
           addFilesToSelection(e.dataTransfer.files);
         }
       });
-      
+
       // Envio do formulário
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
         const description = document.getElementById('description').value;
-        
+
         if (!validateForm(description, selectedFiles)) {
           return;
         }
-        
+
         try {
           showLoading();
           clearMessages();
-          
+
           const formData = new FormData();
           formData.append('description', description);
-          
+
           // Adiciona todas as imagens ao FormData
           selectedFiles.forEach((file) => {
             formData.append('images', file);
           });
-          
+
           const response = await fetch(API_URL, {
             method: 'POST',
             body: formData
           });
-          
+
           if (!response.ok) {
             const errorData = await response.json();
             throw new Error(errorData.error || 'Erro desconhecido');
           }
-          
+
           const newPost = await response.json();
           addPostToDOM(newPost);
           showSuccess('Solicitação enviada com sucesso!');
@@ -468,25 +478,25 @@
         }
       });
     }
-    
+
     // Adiciona arquivos à seleção
     function addFilesToSelection(files) {
-      const newFiles = Array.from(files).filter(file => 
-        file.type.match('image.*') && 
+      const newFiles = Array.from(files).filter(file =>
+        file.type.match('image.*') &&
         !selectedFiles.some(existingFile => existingFile.name === file.name)
       );
-      
+
       selectedFiles = [...selectedFiles, ...newFiles];
       updateFilePreviews();
     }
-    
+
     // Atualiza as pré-visualizações
     function updateFilePreviews() {
       previewContainer.innerHTML = '';
-      
+
       selectedFiles.forEach((file, index) => {
         const reader = new FileReader();
-        
+
         reader.onload = (e) => {
           const previewElement = document.createElement('div');
           previewElement.className = 'image-preview';
@@ -496,56 +506,56 @@
             <div class="file-info">${file.name} (${formatFileSize(file.size)})</div>
           `;
           previewContainer.appendChild(previewElement);
-          
+
           // Adiciona evento de remoção
           previewElement.querySelector('.remove-btn').addEventListener('click', (e) => {
             e.stopPropagation();
             removeFile(index);
           });
         };
-        
+
         reader.readAsDataURL(file);
       });
     }
-    
+
     // Remove um arquivo da seleção
     function removeFile(index) {
       selectedFiles = selectedFiles.filter((_, i) => i !== index);
       updateFilePreviews();
     }
-    
+
     // Limpa as pré-visualizações
     function clearFilePreviews() {
       selectedFiles = [];
       previewContainer.innerHTML = '';
       fileInput.value = '';
     }
-    
+
     // Validação do formulário
     function validateForm(description, files) {
       if (!description.trim()) {
         showError('Por favor, descreva o serviço necessário.');
         return false;
       }
-      
+
       if (files.length === 0) {
         showError('Por favor, selecione pelo menos uma imagem.');
         return false;
       }
-      
+
       return true;
     }
-    
+
     // Carrega os posts
     async function fetchPosts() {
       try {
         showLoading();
         const response = await fetch(API_URL);
-        
+
         if (!response.ok) {
           throw new Error('Erro ao carregar posts');
         }
-        
+
         const posts = await response.json();
         renderPosts(posts);
       } catch (error) {
@@ -555,29 +565,29 @@
         hideLoading();
       }
     }
-    
+
     // Renderiza os posts
     function renderPosts(posts) {
       postsList.innerHTML = '';
-      
+
       if (posts.length === 0) {
         postsList.innerHTML = '<p>Nenhuma solicitação encontrada.</p>';
         return;
       }
-      
+
       // Ordena do mais recente para o mais antigo
       posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-      
+
       posts.forEach(post => {
         addPostToDOM(post);
       });
     }
-    
+
     // Adiciona post ao DOM
     function addPostToDOM(post) {
       const postElement = document.createElement('div');
       postElement.className = 'post-card';
-      
+
       // Cria o carrossel de imagens
       let imagesHTML = '';
       if (post.images && post.images.length > 0) {
@@ -589,7 +599,7 @@
           </div>
         `;
       }
-      
+
       postElement.innerHTML = `
         ${imagesHTML}
         <div class="post-content">
@@ -597,58 +607,59 @@
           <small class="post-date">${formatDate(post.createdAt)}</small>
         </div>
       `;
-      
+
       postsList.appendChild(postElement);
     }
-    
+
     // Formata tamanho do arquivo
     function formatFileSize(bytes) {
       if (bytes < 1024) return bytes + ' bytes';
       else if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
       else return (bytes / 1048576).toFixed(1) + ' MB';
     }
-    
+
     // Formata data
     function formatDate(dateString) {
-      const options = { 
-        year: 'numeric', 
-        month: 'long', 
+      const options = {
+        year: 'numeric',
+        month: 'long',
         day: 'numeric',
         hour: '2-digit',
         minute: '2-digit'
       };
       return new Date(dateString).toLocaleDateString('pt-BR', options);
     }
-    
+
     // Feedback visual
     function showLoading() {
       loadingIndicator.style.display = 'block';
     }
-    
+
     function hideLoading() {
       loadingIndicator.style.display = 'none';
     }
-    
+
     function showSuccess(message) {
       successMessage.textContent = message;
       successMessage.style.display = 'block';
       errorMessage.style.display = 'none';
-      
+
       setTimeout(() => {
         successMessage.style.display = 'none';
       }, 5000);
     }
-    
+
     function showError(message) {
       errorMessage.textContent = message;
       errorMessage.style.display = 'block';
       successMessage.style.display = 'none';
     }
-    
+
     function clearMessages() {
       successMessage.style.display = 'none';
       errorMessage.style.display = 'none';
     }
   </script>
 </body>
+
 </html>
